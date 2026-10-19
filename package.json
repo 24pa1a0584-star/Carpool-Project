@@ -1,0 +1,34 @@
+{
+  "name": "routebloom",
+  "version": "1.0.0",
+  "description": "RouteBloom - Premium Carpool & Ride Sharing Board for Modern Commuters",
+  "main": "server/dist/server.js",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"magenta.bold,cyan.bold\" \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "npm run build --prefix client",
+    "build:server": "npm run build --prefix server",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node server/dist/server.js",
+    "test:server": "npm run test --prefix server",
+    "test": "npm run test:server",
+    "seed": "npm run seed --prefix server"
+  },
+  "keywords": [
+    "carpool",
+    "ridesharing",
+    "mern",
+    "react",
+    "express",
+    "mongodb",
+    "socket.io",
+    "framer-motion"
+  ],
+  "author": "RouteBloom Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
